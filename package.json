@@ -8,11 +8,7 @@
     "lint": "eslint **/*.js --quiet",
     "fix": "eslint --fix .",
     "test": "npm run lint"
-<<<<<<< HEAD
   },
-=======
-/*     "test": "npm run lint && NODE_ENV=test mocha -u tdd --reporter spec --exit"*/  },
->>>>>>> take out test
   "license": "ISC",
   "dependencies": {
     "dotenv": "^6.0.0",
