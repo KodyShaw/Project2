@@ -5,6 +5,7 @@ module.exports = function(app) {
   app.get("/api/v1/items", function(req, res) {
     db.Item.findAll({}).then(function(dbItem) {
       res.json(dbItem);
+      console.log(dbItem);
     });
   });
 
@@ -15,6 +16,7 @@ module.exports = function(app) {
       }
     }).then(function(dbItem){
       res.json(dbItem);
+      console.log(dbItem);
     });
   });
 
