@@ -20,7 +20,11 @@ module.exports = function(app) {
 
   app.post("/api/v1/items", function(req, res) {
     db.Item.create(req.body).then(function(dbItem) {
-      res.json(dbItem);
+      res.status(200).json(dbItem);
+    }).catch(function (err) {
+      // handle error;
+      console.log(err.message);
+      res.status(400).json(err.message);
     });
   });
 
@@ -32,6 +36,10 @@ module.exports = function(app) {
         }
       }).then(function(dbItem) {
       res.json(dbItem);
+    }).catch(function (err) {
+      // handle error;
+      console.log(err.message);
+      res.status(400).json(err.message);
     });
   });
 
