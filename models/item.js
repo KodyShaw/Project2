@@ -55,6 +55,11 @@ module.exports = function (sequelize, DataTypes) {
 			allowNull: false,
 			defaultValue: 0
 		},
+		alertOnQuantity: {
+			type: DataTypes.INTEGER,
+			allowNull: false,
+			defaultValue: 0
+		},
 		expirationDate: {
 			type: DataTypes.DATE,
 			allowNull: true,
