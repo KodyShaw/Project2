@@ -29,6 +29,11 @@ module.exports = function (sequelize, DataTypes) {
 			},
 			defaultValue: false
 		},
+		price: {
+			type: DataTypes.DECIMAL(10, 2),
+			allowNull: true,
+			defaultValue: 0.00
+		},
 		description: {
 			type: DataTypes.TEXT,
 			allowNull: true,

@@ -1,7 +1,5 @@
-//var db = require("../models");
 
 module.exports = function (app) {
-  // Load index page
   app.get("/", function (req, res) {
     var result = {
       partialDashboard: true
@@ -12,6 +10,20 @@ module.exports = function (app) {
   app.get("/addItems", function (req, res) {
     var result = {
       addItems: true
+    };
+    res.render("index", result);
+  });
+
+  app.get("/table/lowItems", function (req, res) {
+    var result = {
+      lowItemTable: true
+    };
+    res.render("index", result);
+  });
+
+  app.get("/table/expiredItems", function (req, res) {
+    var result = {
+      expiredItemTable: true
     };
     res.render("index", result);
   });
