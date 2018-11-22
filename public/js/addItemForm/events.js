@@ -1,9 +1,11 @@
+
+
 $(document).ready(function () {
 
-  main();
+  const addItemForm = new AddItemForm();
 
   $(document).on("click", "#submitBtn", function () {
-    submitFormToDB();
+    addItemForm.submitFormToDB();
   });
 
   /* $(document).on("click", getHTML("updateBtn", false), function () {
