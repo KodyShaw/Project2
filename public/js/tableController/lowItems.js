@@ -1,5 +1,6 @@
 $(document).ready(function () {
 
+    const baseAPI = new BaseAPI();
     baseAPI.getBaseAPI("/api/v1/items/low", populateLowItemsTable);
 
 });

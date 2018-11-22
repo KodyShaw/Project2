@@ -1,7 +1,8 @@
 
 var AddItemForm = function (){
 
-    var _this = this;
+    const _this = this;
+    const baseAPI = new BaseAPI();
     
     _this.submitFormToDB = function () {
         console.debug(arguments.callee.name);

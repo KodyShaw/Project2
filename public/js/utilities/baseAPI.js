@@ -1,8 +1,10 @@
 
-var baseAPI = {
-  getBaseAPI: function (queryURL, callBackFunction) {
-    queryURL = baseAPI.cleanSearchString(queryURL);
-      
+var BaseAPI = function () {
+  const _this = this;
+
+  _this.getBaseAPI = function (queryURL, callBackFunction) {
+    queryURL = _this.cleanSearchString(queryURL);
+
     $.ajax({
       url: queryURL,
       method: "Get"
@@ -14,10 +16,10 @@ var baseAPI = {
       }).catch(function (err) {
         console.debug(err.responseText);
       });
-  },
-        
-  postBaseAPI: function (queryURL, body, callBackFunction) {
-    queryURL = baseAPI.cleanSearchString(queryURL);
+  }
+
+  _this.postBaseAPI = function (queryURL, body, callBackFunction) {
+    queryURL = _this.cleanSearchString(queryURL);
 
     $.ajax({
       url: queryURL,
@@ -31,15 +33,15 @@ var baseAPI = {
       }).catch(function (err) {
         console.debug(err.responseText);
       });
-  },
+  }
 
-  cleanSearchString: function (str) {
+  _this.cleanSearchString = function (str) {
     try {
-        let returnWord = str.trim();
-        returnWord = returnWord.replace(/ /g, "");
-        return returnWord;
+      let returnWord = str.trim();
+      returnWord = returnWord.replace(/ /g, "");
+      return returnWord;
     } catch{
-        return null;
+      return null;
     }
-}
+  }
 };
