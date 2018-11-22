@@ -1,6 +1,7 @@
 $(document).ready(function () {
 
     const baseAPI = new BaseAPI();
+    const htmlFactory = new HtmlFactory();
     baseAPI.getBaseAPI("/api/v1/items/low", populateLowItemsTable);
 
 });

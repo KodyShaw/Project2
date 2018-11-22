@@ -1,3 +1,5 @@
+const htmlFactory = new HtmlFactory();
+    
 function populateTable(records, customTableBuildFunction){
     console.debug(arguments.callee.name);
     

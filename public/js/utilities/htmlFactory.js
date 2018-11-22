@@ -1,25 +1,29 @@
 
-var htmlFactory = {
-    createCardByArrayOfJson: function (parentDiv, cardArrayOfJson) {
+var HtmlFactory = function () {
+
+    const _this=this;
+
+    _this.createCardByArrayOfJson = function (parentDiv, cardArrayOfJson) {
         let elementDiv = $("<div>");
         elementDiv.addClass("card");
-        htmlFactory.createByArrayOfJson(elementDiv, cardArrayOfJson);
+        _this.createByArrayOfJson(elementDiv, cardArrayOfJson);
         $(parentDiv).append(elementDiv);
 
-    },
-    createByArrayOfJson: function (parentDiv, cardArrayOfJson) {
+    }
+
+    _this.createByArrayOfJson = function (parentDiv, cardArrayOfJson) {
         cardArrayOfJson.forEach(element => {
-            htmlFactory.createSubElement(parentDiv, element);
+            _this.createSubElement(parentDiv, element);
         });
 
-    },
+    }
 
-    createSubElement: function (parentDiv, jsonElement) {
+    _this.createSubElement = function (parentDiv, jsonElement) {
 
-        let elementDivType = htmlFactory.getJsonProperty(jsonElement, "div");
-        let elementText = htmlFactory.getJsonProperty(jsonElement, "text");
-        let elementArrayAttr = htmlFactory.getJsonProperty(jsonElement, "attrs");
-        let elementChildren = htmlFactory.getJsonProperty(jsonElement, "children");
+        let elementDivType = _this.getJsonProperty(jsonElement, "div");
+        let elementText = _this.getJsonProperty(jsonElement, "text");
+        let elementArrayAttr = _this.getJsonProperty(jsonElement, "attrs");
+        let elementChildren = _this.getJsonProperty(jsonElement, "children");
 
         let elementDiv = $(elementDivType);
         elementDiv.text(elementText);
@@ -28,17 +32,17 @@ var htmlFactory = {
         });
 
         if (elementChildren !== null) {
-            htmlFactory.createByArrayOfJson(elementDiv, elementChildren)
+            _this.createByArrayOfJson(elementDiv, elementChildren)
         }
 
         $(parentDiv).append(elementDiv);
-    },
+    }
 
-    getJsonProperty: function (json, prop) {
+    _this.getJsonProperty = function (json, prop) {
         return json[prop] || null;
     },
 
-    htmlBasicPartial: function (div, text, divClass) {
+    _this.htmlBasicPartial = function (div, text, divClass) {
         return {
             "div": div,
             "text": text,
