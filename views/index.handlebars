@@ -1,14 +1,12 @@
 <script type="text/javascript" src="/js/utilities/baseAPI.js"></script>
 
 <main role="main">
-  <div class="jumbotron">
-    <div class="container">
-      <h1 class="display-3">Dynamic Inventory System</h1>
+  <div class="container">
+    <div class="jumbotron">
+      <h1 class="animated swing display-3">Dynamic Inventory System</h1>
       <p>This is a sleek, agile and effective inventory solution for your small business</p>.
       <p><a class="btn btn-primary btn-lg" href="/" role="button">Go to DashBoard</a></p>
     </div>
-  </div>
-  <div class="container">
     <p>{{partialName}}</p>
     {{#if partialDashboard}}
     {{> dashboard}}
@@ -24,4 +22,3 @@
     {{/if}}
   </div>
 </main>
-
