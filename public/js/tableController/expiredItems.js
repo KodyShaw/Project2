@@ -15,6 +15,7 @@ function buildExpiredItemsHtmlJson(snapshot) {
     return htmlJson = [
         htmlFactory.htmlBasicPartial("<td>", snapshot["name"], "name"),
         htmlFactory.htmlBasicPartial("<td>", snapshot["sku"], "sku"),
+        htmlFactory.htmlBasicPartial("<td>", snapshot["price"], "price"),
         htmlFactory.htmlBasicPartial("<td>", snapshot["category"], "category"),
         htmlFactory.htmlBasicPartial("<td>", snapshot["quantity"], "quantity"),
         htmlFactory.htmlBasicPartial("<td>", snapshot["expirationDate"], "expirationDate"),
