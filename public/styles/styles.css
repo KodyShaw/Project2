@@ -3,7 +3,13 @@
 }
 
 body {
-  background-image: url("/images/background-texture.jpg");
+  background-image: url("/images/oak.jpg");
   background-repeat: no-repeat;
   background-size: cover
+}
+
+.jumbotron {
+  background-color: #cab59d;
+  background: none;
+  margin-bottom: 0px
 }
