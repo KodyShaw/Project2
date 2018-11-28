@@ -19,7 +19,12 @@ var AddItemForm = function (){
             name: $("#itemName").val(),
             description: $("#description").val(),
             category: $("#category").val(),
-            quantity: $("#quantity").val()
+            quantity: $("#quantity").val(),
+            sku: $("#sku").val(),
+            expectedQuantity: $("#expectedQuantity").val(),
+            alertOnQuantity: $("#alertOnQuantity").val(),
+            price: $("#price").val(),
+            expirationDate: $("#expirationDate").val()
         };
     };
     
