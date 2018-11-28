@@ -5,19 +5,21 @@
 <section class="card">
     <h3 class="card-header"><i class="fa fa-list-alt"></i>Items Inventory</h3>
     <div class="card-body">
-        <table class="table">
-            <thead>
-                <tr class="col-sm-12">
-                    {{#if lowItems}}
-                    {{> tablePartials/lowItems}}
-                    {{/if}}
-                    {{#if expiredItems}}
-                    {{> tablePartials/expiredItems}}
-                    {{/if}}
-                </tr>
-            </thead>
-            <tbody id="results">
-            </tbody>
-        </table>
+        <div class="table-responsive">
+            <table class="table table-striped table-hover table-bordered">
+                <thead class="bg-secondary">
+                    <tr class="col-sm-12">
+                        {{#if lowItems}}
+                        {{> tablePartials/lowItems}}
+                        {{/if}}
+                        {{#if expiredItems}}
+                        {{> tablePartials/expiredItems}}
+                        {{/if}}
+                    </tr>
+                </thead>
+                <tbody id="results">
+                </tbody>
+            </table>
+        </div>
     </div>
 </section>
