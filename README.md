@@ -15,7 +15,7 @@
 
 ## Heroku Link To Project
 
-  `https://olivanders-inventory.herokuapp.com/`
+  https://olivanders-inventory.herokuapp.com/
 
 
 ## Project Requirements
