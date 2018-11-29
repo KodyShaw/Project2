@@ -17,7 +17,7 @@ $(document).ready(function () {
             htmlBasicPartial("<td>", snapshot["price"], "price"),
             htmlBasicPartial("<td>", snapshot["category"], "category"),
             htmlBasicPartial("<td>", snapshot["quantity"], "quantity"),
-            htmlBasicPartial("<td>", snapshot["expirationDate"], "expirationDate"),
+            htmlBasicPartial("<td>", snapshot["expirationDate"].substring(0,10), "expirationDate"),
             htmlBasicPartial("<Button>", "Edit", "btn btn-primary editBtn"),
             htmlBasicPartial("<Button>", "X", "btn btn-primary deleteBtn")
         ];

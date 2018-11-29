@@ -2,7 +2,7 @@
 
 <main role="main">
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Olivanders's Inventory</a>
+    <a class="navbar-brand" href="/">Olivanders's Inventory</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
       aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -14,6 +14,9 @@
         </li>
         <li class="nav-item active">
           <a class="nav-link" href="/addItems">Add Items</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/table/allItems">All Items</a>
         </li>
         <li class="nav-item active">
           <a class="nav-link" href="/table/expiredItems">About to Expire</a>
@@ -50,6 +53,9 @@
     {{/if}}
     {{#if updateItems}}
     {{> addItems this}}
+    {{/if}}
+    {{#if allItemTable}}
+    {{> itemTable allItems=true}}
     {{/if}}
     {{#if lowItemTable}}
     {{> itemTable lowItems=true}}

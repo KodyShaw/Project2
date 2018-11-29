@@ -35,6 +35,13 @@ module.exports = function (app) {
     });
   });
 
+  app.get("/table/allItems", function (req, res) {
+    var result = {
+      allItemTable: true
+    };
+    res.render("index", result);
+  });
+
   app.get("/table/lowItems", function (req, res) {
     var result = {
       lowItemTable: true
