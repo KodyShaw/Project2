@@ -1,56 +1,67 @@
-
 <section class="card">
+<<<<<<< HEAD
     <h3 class="card-header"><i class="fa fa-list-alt"></i>Add Inventory Item</h3>
+=======
+    <h3 class="card-header"><i class="fa fa-list-alt"></i>Add your Item</h3>
+>>>>>>> update and delete work but this will have many merge conflicts
     <div class="card-body">
+        <div id="uuid" value={{dbItem.uuid}}></div>
         <div class="form-group">
             <label for="itemName">Item Name:</label>
-            <input type="text" class="form-control" id="itemName" placeholder="">
+            <input type="text" class="form-control" id="itemName" value="{{dbItem.name}}" placeholder="Item Name">
         </div>
         <div class="form-group">
             <label for="sku">Sku:</label>
-            <input type="text" class="form-control" id="sku" placeholder="">
+            <input type="text" class="form-control" id="sku" value="{{dbItem.sku}}" placeholder="abc123">
         </div>
         <div class="form-group">
             <label for="price">Price:</label>
-            <input type="text" class="form-control" id="price" placeholder="$99.99">
+            <input type="text" class="form-control" id="price" value="{{dbItem.price}}" placeholder="$99.99">
         </div>
         <div class="form-group">
             <label for="category">Category:</label>
-            <input type="text" class="form-control militaryTime" id="category" placeholder="">
+            <input type="text" class="form-control militaryTime" id="category" value="{{dbItem.category}}" placeholder="Clothing">
         </div>
         <div class="form-group">
             <label for="description">Description:</label>
-            <input type="text" class="form-control" id="description" placeholder="">
+            <input type="text" class="form-control" id="description" value="{{dbItem.description}}" placeholder="warm">
         </div>
         <div class="form-group">
             <label for="quantity">Quantity:</label>
-            <input type="text" class="form-control inputNumber" id="quantity" placeholder="">
+            <input type="text" class="form-control inputNumber" id="quantity" value={{dbItem.quantity}} placeholder="100">
         </div>
         <div class="form-group">
             <label for="expectedQuantity">Expected Quantity:</label>
-            <input type="text" class="form-control" id="expectedQuantity" placeholder="100">
+            <input type="text" class="form-control" id="expectedQuantity" value="{{dbItem.expectedQuantity}}"
+                placeholder="100">
         </div>
         <div class="form-group">
             <label for="alertOnQuantity">Alert On Quantity:</label>
-            <input type="text" class="form-control" id="alertOnQuantity" placeholder="">
+            <input type="text" class="form-control" id="alertOnQuantity" value="{{dbItem.alertOnQuantity}}" placeholder="30">
         </div>
         <div class="form-group">
             <label for="waiteTimeOnOrderHours">Wait Time On Order Hours:</label>
-            <input type="text" class="form-control" id="waiteTimeOnOrderHours" placeholder="">
+            <input type="text" class="form-control" id="waiteTimeOnOrderHours" value="{{dbItem.waiteTimeOnOrderHours}}"
+                placeholder="0">
         </div>
         <div class="form-group">
             <label for="expirationDate">Expiration Date:</label>
-            <input type="text" class="form-control" id="expirationDate" placeholder="">
+            <input type="text" class="form-control" id="expirationDate" value="{{dbItem.expirationDate}}" placeholder="">
         </div>
+
+        {{#if addItems}}
         <button type="submit" id="submitBtn" class="btn btn-primary"><i class="fa fa-paper-plane" aria-hidden="true"></i>
             Submit</button>
+        {{/if}}
+        {{#if updateItems}}
         <button type="submit" id="updateBtn" class="btn btn-primary"><i class="fa fa-edit" aria-hidden="true"></i>
             Update</button>
+        {{/if}}
     </div>
 
 </section>
 
 <script type="text/javascript" src="/js/utilities/cleave.min.js"></script>
 <script type="text/javascript" src="/js/formatting/itemInputForm.js"></script>
-<script type="text/javascript" src="/js/addItemForm/submitForm.js"></script>
+<script type="text/javascript" src="/js/addItemForm/itemForm.js"></script>
 <script type="text/javascript" src="/js/addItemForm/events.js"></script>

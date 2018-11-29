@@ -69,6 +69,7 @@ module.exports = function (app) {
 
   app.post("/api/v1/items", function (req, res) {
     try {
+      delete req.body.uuid;
       db.Item.create(req.body).then(function (dbItem) {
         res.status(200).json(dbItem);
       }).catch(function (err) {
@@ -106,8 +107,8 @@ module.exports = function (app) {
 
       db.Item.destroy({
         where: query
-      }).then(function (dbItem) {
-        res.json(dbItem);
+      }).then(function (results) {
+        res.json(results);
       });
     } catch (err) {
       res.status(400).json("Invalid request");
