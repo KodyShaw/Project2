@@ -1,27 +1,28 @@
 $(document).ready(function () {
 
     const baseAPI = new BaseAPI();
-    const htmlFactory = new HtmlFactory();
+    const tableFunctions = new TableFunctions();
+    const htmlBasicPartial = tableFunctions.htmlFactory.htmlBasicPartial;
     baseAPI.getBaseAPI("/api/v1/items/low", populateLowItemsTable);
 
+    function populateLowItemsTable(records){
+        console.debug(arguments.callee.name);
+        tableFunctions.populateTable(records, buildLowItemsHtmlJson);
+    }
+    
+    function buildLowItemsHtmlJson(snapshot) {
+        return htmlJson = [
+            htmlBasicPartial("<td>", snapshot["name"], "name"),
+            htmlBasicPartial("<td>", snapshot["sku"], "sku"),
+            htmlBasicPartial("<td>", snapshot["price"], "price"),
+            htmlBasicPartial("<td>", snapshot["category"], "category"),
+            htmlBasicPartial("<td>", snapshot["quantity"], "quantity"),
+            htmlBasicPartial("<td>", snapshot["expirationDate"], "expirationDate"),
+            htmlBasicPartial("<Button>", "Edit", "btn btn-primary editBtn"),
+            htmlBasicPartial("<Button>", "X", "btn btn-primary deleteBtn")
+        ];
+    }
 });
 
-function populateLowItemsTable(records){
-    console.debug(arguments.callee.name);
-    populateTable(records, buildLowItemsHtmlJson);
-}
-
-function buildLowItemsHtmlJson(snapshot) {
-    return htmlJson = [
-        htmlFactory.htmlBasicPartial("<td>", snapshot["name"], "name"),
-        htmlFactory.htmlBasicPartial("<td>", snapshot["sku"], "sku"),
-        htmlFactory.htmlBasicPartial("<td>", snapshot["price"], "price"),
-        htmlFactory.htmlBasicPartial("<td>", snapshot["category"], "category"),
-        htmlFactory.htmlBasicPartial("<td>", snapshot["quantity"], "quantity"),
-        htmlFactory.htmlBasicPartial("<td>", snapshot["expirationDate"], "expirationDate"),
-        htmlFactory.htmlBasicPartial("<Button>", "Edit", "btn btn-primary editBtn"),
-        htmlFactory.htmlBasicPartial("<Button>", "X", "btn btn-primary deleteBtn")
-    ];
-}
 
 

@@ -1,15 +1,15 @@
-
-
 $(document).ready(function () {
 
-  const addItemForm = new AddItemForm();
-
-  $(document).on("click", "#submitBtn", function () {
-    addItemForm.submitFormToDB();
+    const itemForm = new ItemForm();
+  
+    
+    $(document).on("click", "#submitBtn", function () {
+      itemForm.submitFormToDB();
+    });
+    
+    $(document).on("click", "#updateBtn", function () {
+      itemForm.updateFormToDB();
+    });
+  
+  
   });
-
-  /* $(document).on("click", getHTML("updateBtn", false), function () {
-    updateItem($(this).attr("data-key"));
-  }); */
-
-});
