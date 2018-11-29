@@ -3,14 +3,14 @@ $(document).ready(function () {
     const baseAPI = new BaseAPI();
     const tableFunctions = new TableFunctions();
     const htmlBasicPartial = tableFunctions.htmlFactory.htmlBasicPartial;
-    baseAPI.getBaseAPI("/api/v1/items/low", populateLowItemsTable);
+    baseAPI.getBaseAPI("/api/v1/items/all", populateAllItemsTable);
 
-    function populateLowItemsTable(records){
+    function populateAllItemsTable(records){
         console.debug(arguments.callee.name);
-        tableFunctions.populateTable(records, buildLowItemsHtmlJson);
+        tableFunctions.populateTable(records, buildAllItemsHtmlJson);
     }
     
-    function buildLowItemsHtmlJson(snapshot) {
+    function buildAllItemsHtmlJson(snapshot) {
         return htmlJson = [
             htmlBasicPartial("<td>", snapshot["name"], "name"),
             htmlBasicPartial("<td>", snapshot["sku"], "sku"),

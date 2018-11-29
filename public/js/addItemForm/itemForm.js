@@ -33,7 +33,7 @@ var ItemForm = function (){
             uuid: $("#uuid").attr("value"),
             name: $("#itemName").val(),
             sku: $("#sku").val(),
-            price: $("#price").val(),
+            price: $("#price").val().substring(1),
             category: $("#category").val(),
             description: $("#description").val(),
             quantity: $("#quantity").val(),
@@ -53,5 +53,6 @@ var ItemForm = function (){
     
     _this.nextStep = function(){
         console.log("After post msg");
+        $("#finishedAddUpdate").text("Action Compleat!");
     };
 };
