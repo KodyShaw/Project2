@@ -1,5 +1,5 @@
 
-var AddItemForm = function (){
+var ItemForm = function (){
 
     const _this = this;
     const baseAPI = new BaseAPI();
@@ -13,25 +13,39 @@ var AddItemForm = function (){
             baseAPI.postBaseAPI("/api/v1/items", inputs, _this.nextStep);
         }
     };
+
+    _this.updateFormToDB = function () {
+        console.debug(arguments.callee.name);
+    
+        let inputs = _this.getInputsFromForm();
+    
+        if (_this.isValidInput(inputs)) {
+            baseAPI.putBaseAPI("/api/v1/items", inputs, _this.nextStep);
+        }
+    };
     
     _this.getInputsFromForm = function (){
+        let tempVal = $("#waiteTimeOnOrderHours").val();
+        if ($("#waiteTimeOnOrderHours").val() === ""){
+            $("#waiteTimeOnOrderHours").val(0)
+        }
         return inputs = {
+            uuid: $("#uuid").attr("value"),
             name: $("#itemName").val(),
-            description: $("#description").val(),
-            category: $("#category").val(),
-            quantity: $("#quantity").val(),
             sku: $("#sku").val(),
+            price: $("#price").val(),
+            category: $("#category").val(),
+            description: $("#description").val(),
+            quantity: $("#quantity").val(),
             expectedQuantity: $("#expectedQuantity").val(),
             alertOnQuantity: $("#alertOnQuantity").val(),
-            price: $("#price").val(),
+            waiteTimeOnOrderHours: $("#waiteTimeOnOrderHours").val(),
             expirationDate: $("#expirationDate").val()
         };
     };
     
     _this.isValidInput = function (inputs){
         if (inputs.name === ""
-        || inputs.description === ""
-        || inputs.category === ""
         || inputs.quantity === "")
             return false;
         return true;

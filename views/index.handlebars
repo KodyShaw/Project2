@@ -21,7 +21,7 @@
         <li class="nav-item active">
           <a class="nav-link" href="/table/expiredItems">Expiring</a>
         </li>
-        
+
       </ul>
     </div>
   </nav>
@@ -38,19 +38,24 @@
           </h4>
           <br>
         </div>
-
-        <p>{{partialName}}</p>
-        {{#if partialDashboard}}
-        {{> dashboard}}
-        {{/if}}
-        {{#if addItems}}
-        {{> addItems}}
-        {{/if}}
-        {{#if lowItemTable}}
-        {{> itemTable lowItems=true}}
-        {{/if}}
-        {{#if expiredItemTable}}
-        {{> itemTable expiredItems=true}}
-        {{/if}}
       </div>
+    </div>
+
+    <p>{{partialName}}</p>
+    {{#if partialDashboard}}
+    {{> dashboard}}
+    {{/if}}
+    {{#if addItems}}
+    {{> addItems this}}
+    {{/if}}
+    {{#if updateItems}}
+    {{> addItems this}}
+    {{/if}}
+    {{#if lowItemTable}}
+    {{> itemTable lowItems=true}}
+    {{/if}}
+    {{#if expiredItemTable}}
+    {{> itemTable expiredItems=true}}
+    {{/if}}
+  </div>
 </main>

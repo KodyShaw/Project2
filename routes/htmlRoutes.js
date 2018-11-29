@@ -1,4 +1,6 @@
 
+var db = require("../models");
+
 module.exports = function (app) {
   app.get("/", function (req, res) {
     var result = {
@@ -12,6 +14,25 @@ module.exports = function (app) {
       addItems: true
     };
     res.render("index", result);
+  });
+
+  app.get("/updateItems/:uuid", function (req, res) {
+
+    var query = {};
+    query.uuid = req.params.uuid;
+
+    db.Item.findOne({
+      where: query
+    }).then(function (dbItem) {
+
+      var result = {
+        updateItems: true,
+        dbItem: dbItem
+      };
+
+      res.render("index", result);
+      //res.json(dbItem);
+    });
   });
 
   app.get("/table/lowItems", function (req, res) {
