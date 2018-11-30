@@ -30,5 +30,5 @@ new Cleave("#waiteTimeOnOrderHours", {
 
 new Cleave("#expirationDate", {
     date: true,
-    datePattern: ['m', 'd', 'y']
+    datePattern: ['m', 'd', 'Y']
 });
