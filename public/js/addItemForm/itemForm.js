@@ -52,7 +52,6 @@ var ItemForm = function (){
     };
     
     _this.nextStep = function(){
-        console.log("After post msg");
-        $("#finishedAddUpdate").text("Action Compleat!");
+        $("#finishedAddUpdate").text("Item Submitted!");
     };
 };
