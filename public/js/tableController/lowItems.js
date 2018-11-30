@@ -11,13 +11,17 @@ $(document).ready(function () {
     }
     
     function buildLowItemsHtmlJson(snapshot) {
+        let exDate = "";
+        if (snapshot["expirationDate"] !== null){
+            exDate=snapshot["expirationDate"].substring(0,10);
+        }
         return htmlJson = [
             htmlBasicPartial("<td>", snapshot["name"], "name"),
             htmlBasicPartial("<td>", snapshot["sku"], "sku"),
             htmlBasicPartial("<td>", snapshot["price"], "price"),
             htmlBasicPartial("<td>", snapshot["category"], "category"),
             htmlBasicPartial("<td>", snapshot["quantity"], "quantity"),
-            htmlBasicPartial("<td>", snapshot["expirationDate"].substring(0,10), "expirationDate"),
+            htmlBasicPartial("<td>", exDate, "expirationDate"),
             htmlBasicPartial("<Button>", "Edit", "btn btn-primary editBtn"),
             htmlBasicPartial("<Button>", "X", "btn btn-primary deleteBtn")
         ];
