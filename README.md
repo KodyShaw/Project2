@@ -20,6 +20,11 @@
 
 ## Project Requirements
 
+`Additional technologies used:`
+* cleave.js
+
+* animate.css
+
 `Your project must:`
 
 * Use a Node and Express Web Server;
@@ -39,4 +44,6 @@
 * Meet good quality coding standards (indentation, scoping, naming).
 
 * Must not expose sensitive API key information on the server. 
+
+
 
